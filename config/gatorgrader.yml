@@ -1,0 +1,25 @@
+---
+name: cmpsc-203-spring-2019-practical1
+break: true
+indent: 4
+---
+# --> check the source code for various characteristics
+# note that without an "--exact" the check is an "at least"
+src/termfrequency:
+        compute_tf_monolith.py:
+            --single 12 --language Python
+            --fragment "for tf in word_freqs" --count 1
+            --fragment "word_freqs" --count 11 --exact
+# --> check the technical writing
+# mdl is a Markdown linting tool
+# proselint checks writing for common mistakes
+writing/reflection.md:
+    mdl
+    proselint
+    --paragraphs 4
+    --words 100
+# --> check the number of commits beyond a threshold
+--commits 10
+# --> check that the program executes and produces 4 lines of output
+--command "pipenv run python3 src/termfrequency/compute_tf_monolith.py inputs/input.txt" --executes
+--command "pipenv run python3 src/termfrequency/compute_tf_monolith.py inputs/input.txt" --count 8 --exact
