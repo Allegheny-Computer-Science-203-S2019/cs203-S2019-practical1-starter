@@ -92,7 +92,7 @@ install and manage development packages, and to run Python commands. Here is a
 sample of the Pipenv commands that you will need to run during this assignment.
 
 - Install and upgrade the `pipenv` command: `pip install pipenv -U --user`
-- Install all the project dependencies: `pip install --dev`
+- Install all the project dependencies: `pipenv install --dev`
 - Reformat the program with `black`: `pipenv run black src/termfrequency/compute_tf_monolith.py`
 - Check the program with `pylint`: `pipenv run pylint src/termfrequency`
 - Check the program with `flake8`: `pipenv run flake8 src/termfrequency`
