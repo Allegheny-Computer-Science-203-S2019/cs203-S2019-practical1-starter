@@ -50,6 +50,7 @@ before_script:
 # run checks on a student's Python code GatorGrader
 # run checks on a student's Markdown writing through GatorGrader
 # note: "gradle grade" will install GatorGrader and run all checks
+# note: see the later assignments for a possibly better travis file
 script:
   # lint the assignment's documentation
   - mdl README.md
